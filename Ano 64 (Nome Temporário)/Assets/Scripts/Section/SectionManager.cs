@@ -10,6 +10,9 @@ public class SectionManager : MonoBehaviour {
     public GameObject canvas;
     public GameObject imageSection;
     public GameObject textSection;
+    public GameObject darken;
+    public GameObject zoomScene;
+    public GameObject magnifier;
 
     private void Awake() {
         if (instance == null) {
@@ -29,7 +32,7 @@ public class SectionManager : MonoBehaviour {
         }
     }
 
-    public void SetSection(bool sectionBool) {
+    public void SetSection(bool sectionBool, bool zoom, Transform transform) {
         if (sectionBool) {
             onSection = sectionBool;
         }
@@ -37,12 +40,21 @@ public class SectionManager : MonoBehaviour {
             onSectionCounter = 5;
         }
         canvas.SetActive(sectionBool);
+        ControlZoom(zoom,transform);
         HideSections();
     }
 
     private void HideSections() {
         imageSection.SetActive(false);
         textSection.SetActive(false);
+        TextManager.instance.CloseText();
+    }
+
+    private void ControlZoom(bool zoom, Transform transform) {
+        ZoomManager.instance.ControlZoom(zoom, transform);
+        zoomScene.SetActive(zoom);
+        darken.SetActive(!zoom);
+        magnifier.SetActive(!zoom);
     }
 
     public void ImageSection(ImageObject imageObject) {
@@ -55,5 +67,7 @@ public class SectionManager : MonoBehaviour {
         textSection.SetActive(true);
         TextManager.instance.PresentText(textObject);
     }
+
+    
 
 }

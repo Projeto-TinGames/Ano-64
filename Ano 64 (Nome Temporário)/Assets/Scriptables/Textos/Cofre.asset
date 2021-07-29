@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7be118f480344b64c9660d5ec0e5d3c1, type: 3}
   m_Name: Cofre
   m_EditorClassIdentifier: 
+  zoom: 1
   text: "Voc\xEA descobriu o c\xF3digo de cofre 01 - 27 - 43 - 31"
+  alignment: 258
   options: []

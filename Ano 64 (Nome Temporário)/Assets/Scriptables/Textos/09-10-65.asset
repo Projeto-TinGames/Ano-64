@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7be118f480344b64c9660d5ec0e5d3c1, type: 3}
   m_Name: 09-10-65
   m_EditorClassIdentifier: 
+  zoom: 0
   text: "\tDia 9 de Outubro de 1965\n\n\tNesse dia acordei pela manh\xE3 e fui at\xE9
     a padaria do seu Joaquim. Ao entrar no estabelecimento senti o cheiro da fornada
     quentinha que acabara de sair do forno. Seu Joaquim se aproxima do balc\xE3o
     me cumprimentando, ent\xE3o eu logo..."
+  alignment: 264
   options:
   - text: A) Disse bom dia a ele
     linkedText: {fileID: 0}

@@ -28,9 +28,16 @@ public class TextManager : MonoBehaviour {
 
     public void PresentText(TextObject textObject) {
         textBox.text = textObject.text;
+        textBox.alignment = textObject.alignment;
         for (int i = 0; i < textObject.options.Count; i++) {
 			textButtons[i].text = "\t" + textObject.options[i].text;
         }
     }
 
+    public void CloseText() {
+        textBox.text = "";
+        for (int i = 0; i < textButtons.Count; i++) {
+			textButtons[i].text = "";
+        }
+    }
 }

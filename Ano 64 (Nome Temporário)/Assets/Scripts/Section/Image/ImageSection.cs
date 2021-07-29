@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ImageSection : MonoBehaviour {
-    public ImageObject imageObject;
+public class ImageSection : Section {
 
-    public void SendImage() {
-        SectionManager.instance.SetSection(true);
-        SectionManager.instance.ImageSection(imageObject);
+    public override void SendObject() {
+        base.SendObject();
+        SectionManager.instance.ImageSection((ImageObject)sectionObject);
     }
+    
 }

@@ -11,7 +11,7 @@ public class TextChoose : MonoBehaviour {
     }
 
     public void Choose() {
-        SectionManager.instance.SetSection(false);
+        SectionManager.instance.SetSection(false,false,null);
         Debug.Log(text);
     }
 }

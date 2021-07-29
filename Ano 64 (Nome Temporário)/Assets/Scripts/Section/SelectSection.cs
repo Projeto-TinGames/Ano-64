@@ -5,7 +5,6 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 public class SelectSection : MonoBehaviour {
-    public bool zoom;
     public UnityEvent evento;
 
     private List<SpriteRenderer> spritesSelecionados;
@@ -30,9 +29,6 @@ public class SelectSection : MonoBehaviour {
         if (!SectionManager.instance.onSection) {
             TrocarCor(Color.clear);
             evento.Invoke();
-        }
-        if (zoom) {
-            ZoomManager.instance.ZoomIn(this.transform);
         }
     }
 

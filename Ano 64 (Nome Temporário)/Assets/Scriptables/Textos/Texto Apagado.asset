@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7be118f480344b64c9660d5ec0e5d3c1, type: 3}
   m_Name: Texto Apagado
   m_EditorClassIdentifier: 
+  zoom: 0
   text: "\tDia  0 de O tubro de 1965\r\n\r\n\tAp\xF3s inve        o que po eria 
     er a ontecido c m naquela  oi e, che uei a conclus\xE3o d q e o  stu an es av 
     m b sca d a go q e p dessem f zer para g ran it os s\r\n\tPor m, algo acabou      
@@ -19,4 +20,5 @@ MonoBehaviour:
     ntos.\r\n\r\n...A partir daqui o texto est\xE1 muito ileg\xEDvel. Assim que eu
     conseguir mais informa\xE7\xF5es a respeito desse dia, eu posso tentar usar a
     caneta para completar as palavras."
+  alignment: 264
   options: []

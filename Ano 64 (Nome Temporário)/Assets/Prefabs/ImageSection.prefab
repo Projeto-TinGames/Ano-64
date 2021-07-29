@@ -123,13 +123,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9026d840670628a419edd5cb250f0ba9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoom: 0
   evento:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3392849679794240967}
         m_TargetAssemblyTypeName: ImageSection, Assembly-CSharp
-        m_MethodName: SendImage
+        m_MethodName: SendObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -151,4 +150,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fb50d0c27d46124293df627d4f5028a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imageObject: {fileID: 0}
+  sectionObject: {fileID: 0}
