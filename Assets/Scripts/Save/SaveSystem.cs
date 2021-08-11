@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using UnityEngine.SceneManagement;
 
 public static class SaveSystem {
     
@@ -24,6 +25,8 @@ public static class SaveSystem {
 
             PlayerData data = (PlayerData)binaryFormatter.Deserialize(fileStream);
             fileStream.Close();
+
+            SceneManager.LoadScene("Protótipo");
 
             return data;
         }

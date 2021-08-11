@@ -12,7 +12,7 @@ public class PlayerData {
     public PlayerData(Player player) {
         difficulty = player.difficulty;
         page = player.page;
-        itemsFound = player.itemsFound;
+        itemsFound = player.itemsFound.ToArray();
     }
 
 }

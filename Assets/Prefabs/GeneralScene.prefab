@@ -293,6 +293,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1141668480042599081}
   - component: {fileID: 1141668480042599082}
+  - component: {fileID: 3898192390486583317}
   m_Layer: 0
   m_Name: Pen
   m_TagString: Untagged
@@ -365,6 +366,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3898192390486583317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141668480042599080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6692fac6ef73f345b3a12d72da7a7da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: Pen
+  show: 0
 --- !u!1 &1141668480091905170
 GameObject:
   m_ObjectHideFlags: 0
@@ -2230,6 +2245,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1141668481380995368}
   - component: {fileID: 1141668481380995369}
+  - component: {fileID: 5218411470183800849}
   m_Layer: 0
   m_Name: Magnifier
   m_TagString: Untagged
@@ -2302,6 +2318,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5218411470183800849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141668481380995375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6692fac6ef73f345b3a12d72da7a7da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: Magnifier
+  show: 0
 --- !u!1 &1141668481407419199
 GameObject:
   m_ObjectHideFlags: 0

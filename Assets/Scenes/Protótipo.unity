@@ -606,6 +606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 108601145765921420, guid: 4175d0fcbf3d1d64db538d8f2b949bfc, type: 3}
+    - {fileID: 2543090360965375977, guid: 4175d0fcbf3d1d64db538d8f2b949bfc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4175d0fcbf3d1d64db538d8f2b949bfc, type: 3}
 --- !u!1001 &1168577433
 PrefabInstance:
@@ -779,6 +780,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fragmento
       objectReference: {fileID: 0}
+    - target: {fileID: 2543090360965375977, guid: 4175d0fcbf3d1d64db538d8f2b949bfc, type: 3}
+      propertyPath: key
+      value: Fragmento4_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543090360965375977, guid: 4175d0fcbf3d1d64db538d8f2b949bfc, type: 3}
+      propertyPath: show
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3392849679794240967, guid: 4175d0fcbf3d1d64db538d8f2b949bfc, type: 3}
       propertyPath: imageObject
       value: 
@@ -793,12 +802,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3988256449573126217, guid: 4175d0fcbf3d1d64db538d8f2b949bfc, type: 3}
       propertyPath: evento.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3988256449573126217, guid: 4175d0fcbf3d1d64db538d8f2b949bfc, type: 3}
       propertyPath: evento.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1531014254}
+      objectReference: {fileID: 1531014255}
     - target: {fileID: 3988256449573126217, guid: 4175d0fcbf3d1d64db538d8f2b949bfc, type: 3}
       propertyPath: evento.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -809,11 +818,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3988256449573126217, guid: 4175d0fcbf3d1d64db538d8f2b949bfc, type: 3}
       propertyPath: evento.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetActive
+      value: PickUp
       objectReference: {fileID: 0}
     - target: {fileID: 3988256449573126217, guid: 4175d0fcbf3d1d64db538d8f2b949bfc, type: 3}
       propertyPath: evento.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: Item, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3988256449573126217, guid: 4175d0fcbf3d1d64db538d8f2b949bfc, type: 3}
       propertyPath: evento.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
@@ -988,6 +997,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1585013787355363510, guid: 4175d0fcbf3d1d64db538d8f2b949bfc, type: 3}
   m_PrefabInstance: {fileID: 1226450158}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1531014255 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2543090360965375977, guid: 4175d0fcbf3d1d64db538d8f2b949bfc, type: 3}
+  m_PrefabInstance: {fileID: 1226450158}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531014254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6692fac6ef73f345b3a12d72da7a7da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!60 &1531014260
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1385,6 +1405,14 @@ PrefabInstance:
     - target: {fileID: 3253329086840699628, guid: 88cd3e51626c848448d7990ba743d204, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260326075742696767, guid: 88cd3e51626c848448d7990ba743d204, type: 3}
+      propertyPath: itemsFound.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260326075742696767, guid: 88cd3e51626c848448d7990ba743d204, type: 3}
+      propertyPath: itemsFound.Array.data[0]
+      value: Magnifier
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6495358284409378618, guid: 88cd3e51626c848448d7990ba743d204, type: 3}

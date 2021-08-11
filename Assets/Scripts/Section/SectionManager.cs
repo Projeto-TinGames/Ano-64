@@ -33,15 +33,24 @@ public class SectionManager : MonoBehaviour {
     }
 
     public void SetSection(bool sectionBool, bool zoom, Transform transform) {
-        if (sectionBool) {
-            onSection = sectionBool;
+        if (VerifyConditions(zoom)) {
+            if (sectionBool) {
+                onSection = sectionBool;
+            }
+            else {
+                onSectionCounter = 5;
+            }
+            canvas.SetActive(sectionBool);
+            ControlZoom(zoom,transform);
+            HideSections();
         }
-        else {
-            onSectionCounter = 5;
+    }
+
+    public bool VerifyConditions(bool zoom) {
+        if (zoom && !Player.instance.FindItem("Magnifier")) {
+            return false;
         }
-        canvas.SetActive(sectionBool);
-        ControlZoom(zoom,transform);
-        HideSections();
+        return true;
     }
 
     private void HideSections() {
@@ -67,7 +76,4 @@ public class SectionManager : MonoBehaviour {
         textSection.SetActive(true);
         TextManager.instance.PresentText(textObject);
     }
-
-    
-
 }
