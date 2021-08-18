@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class SectionManager : MonoBehaviour {
     public static SectionManager instance;
-    [System.NonSerialized]public bool onSection;
-    private int onSectionCounter;
 
     public GameObject canvas;
     public GameObject imageSection;
@@ -13,6 +11,9 @@ public class SectionManager : MonoBehaviour {
     public GameObject darken;
     public GameObject zoomScene;
     public GameObject magnifier;
+
+    [System.NonSerialized]public bool onSection;
+    private int onSectionCounter;
 
     private void Awake() {
         if (instance == null) {
