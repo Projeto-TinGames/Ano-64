@@ -4,6 +4,13 @@ using UnityEngine;
 
 public abstract class Section : MonoBehaviour {
     public SectionObject sectionObject;
+
+    public bool VerifyConditions() {
+        if (sectionObject.zoom && !Player.instance.FindItem("Magnifier")) {
+            return false;
+        }
+        return true;
+    }
     
     public virtual void SendObject() {
         SectionManager.instance.SetSection(true,sectionObject.zoom,transform);

@@ -2,17 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonSection : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+public class ButtonSection : Section {
+    
+    public override void SendObject() {
+        base.SendObject();
+        SectionManager.instance.TextSection((TextObject)sectionObject);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

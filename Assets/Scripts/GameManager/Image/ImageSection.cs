@@ -5,8 +5,10 @@ using UnityEngine;
 public class ImageSection : Section {
 
     public override void SendObject() {
-        base.SendObject();
-        SectionManager.instance.ImageSection((ImageObject)sectionObject);
+        if (VerifyConditions()) {
+            base.SendObject();
+            SectionManager.instance.ImageSection((ImageObject)sectionObject);
+        }
     }
     
 }

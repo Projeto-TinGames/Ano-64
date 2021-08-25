@@ -2,29 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SectionManager : MonoBehaviour {
+public abstract class SectionManager : MonoBehaviour {
     public static SectionManager instance;
-
-    public GameObject canvas;
-    public GameObject imageSection;
-    public GameObject textSection;
-    public GameObject darken;
-    public GameObject zoomScene;
-    public GameObject magnifier;
 
     [System.NonSerialized]public bool onSection;
     private int onSectionCounter;
 
-    private void Awake() {
-        if (instance == null) {
-            instance = this;
-        }
-        else {
-            Destroy(gameObject);
-        }
+    public GameObject canvas;
+    public GameObject darken;
+
+    public virtual void Awake() {
+        instance = this;
     }
 
-    private void FixedUpdate() {
+    public virtual void FixedUpdate() {
         if (onSectionCounter > 0) {
             onSectionCounter--;
             if (onSectionCounter <= 0) {
@@ -33,48 +24,17 @@ public class SectionManager : MonoBehaviour {
         }
     }
 
-    public void SetSection(bool sectionBool, bool zoom, Transform transform) {
-        if (VerifyConditions(zoom)) {
-            if (sectionBool) {
-                onSection = sectionBool;
-            }
-            else {
-                onSectionCounter = 5;
-            }
-            canvas.SetActive(sectionBool);
-            ControlZoom(zoom,transform);
-            HideSections();
+    public virtual void SetSection(bool sectionBool, bool zoom, Transform transform) {
+        if (sectionBool) {
+            onSection = sectionBool;
+        }
+        else {
+            onSectionCounter = 5;
         }
     }
 
-    public bool VerifyConditions(bool zoom) {
-        if (zoom && !Player.instance.FindItem("Magnifier")) {
-            return false;
-        }
-        return true;
-    }
+    public abstract void ImageSection(ImageObject imageObject);
 
-    private void HideSections() {
-        imageSection.SetActive(false);
-        textSection.SetActive(false);
-        TextManager.instance.CloseText();
-    }
+    public abstract void TextSection(TextObject textObject);
 
-    private void ControlZoom(bool zoom, Transform transform) {
-        ZoomManager.instance.ControlZoom(zoom, transform);
-        zoomScene.SetActive(zoom);
-        darken.SetActive(!zoom);
-        magnifier.SetActive(!zoom);
-    }
-
-    public void ImageSection(ImageObject imageObject) {
-        HideSections();
-        imageSection.SetActive(true);
-        ImageManager.instance.PresentImage(imageObject);
-    }
-
-    public void TextSection(TextObject textObject) {
-        textSection.SetActive(true);
-        TextManager.instance.PresentText(textObject);
-    }
 }
