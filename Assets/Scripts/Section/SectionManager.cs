@@ -24,13 +24,17 @@ public abstract class SectionManager : MonoBehaviour {
         }
     }
 
-    public virtual void SetSection(bool sectionBool, bool zoom, Transform transform) {
+    public void SetSection(bool sectionBool) {
         if (sectionBool) {
             onSection = sectionBool;
         }
         else {
             onSectionCounter = 5;
         }
+    }
+
+    public virtual void EnterSection(bool sectionBool, bool zoom, Transform transform) {
+        SetSection(sectionBool);
     }
 
     public abstract void ImageSection(ImageObject imageObject);

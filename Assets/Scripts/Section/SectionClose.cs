@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class SectionClose : MonoBehaviour {
     public void Close() {
-        SectionManager.instance.SetSection(false,false,null);
+        SectionManager.instance.EnterSection(false,false,null);
     }
 }

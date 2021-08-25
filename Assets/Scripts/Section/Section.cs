@@ -13,6 +13,6 @@ public abstract class Section : MonoBehaviour {
     }
     
     public virtual void SendObject() {
-        SectionManager.instance.SetSection(true,sectionObject.zoom,transform);
+        SectionManager.instance.EnterSection(true,sectionObject.zoom,transform);
     }
 }

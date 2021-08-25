@@ -20,6 +20,7 @@ public class SceneController : MonoBehaviour {
     }
 
     public void Load(int scene) {
+        Player.instance.page = scene;
         StartCoroutine(LoadLevel(scene));
     }
 

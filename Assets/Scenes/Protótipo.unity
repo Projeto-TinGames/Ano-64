@@ -1707,6 +1707,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7260326075742696767, guid: 88cd3e51626c848448d7990ba743d204, type: 3}
+      propertyPath: page
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260326075742696767, guid: 88cd3e51626c848448d7990ba743d204, type: 3}
+      propertyPath: chapter
+      value: "Cap\xEDtulo 01 - O In\xEDcio de Tudo"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260326075742696767, guid: 88cd3e51626c848448d7990ba743d204, type: 3}
       propertyPath: itemsFound.Array.size
       value: 1
       objectReference: {fileID: 0}

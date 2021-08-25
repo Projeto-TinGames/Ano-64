@@ -5,18 +5,19 @@ using UnityEngine;
 public class MainMenuManager : SectionManager {
     public GameObject titulo;
 
-    public void NovoJogo() {
-        SceneController.instance.Load(1);
+    private void Start() {
+        onSection = true;
     }
 
-    public void CarregarJogo() {
-        Debug.Log("Carregar");
+    public void NewGame() {
+        SceneController.instance.Load(1);
     }
 
     private void Update() {
         if (Input.GetMouseButtonDown(0) && titulo.activeSelf) {
             titulo.SetActive(false);
             darken.SetActive(false);
+            SetSection(false);
         }
     }
 

@@ -6,9 +6,18 @@ public class GameSectionManager : SectionManager {
     public GameObject imageSection;
     public GameObject textSection;
     public GameObject zoomScene;
+    public GameObject saveScene;
     public GameObject magnifier;
 
     private bool onZoom;
+
+    private void Update() {
+        if (Input.GetButtonDown("Options")) {
+            darken.SetActive(!saveScene.activeSelf);
+            onSection = !saveScene.activeSelf;
+            saveScene.SetActive(!saveScene.activeSelf);
+        }
+    }
 
     private void ControlZoom(bool zoom, Transform transform) {
         ZoomManager.instance.ControlZoom(zoom, transform);
@@ -24,8 +33,8 @@ public class GameSectionManager : SectionManager {
         TextManager.instance.CloseText();
     }
 
-    public override void SetSection(bool sectionBool, bool zoom, Transform transform) {
-        base.SetSection(sectionBool, zoom, transform);
+    public override void EnterSection(bool sectionBool, bool zoom, Transform transform) {
+        base.EnterSection(sectionBool, zoom, transform);
         ControlZoom(zoom,transform);
         if (!onZoom) {
             darken.SetActive(sectionBool);
