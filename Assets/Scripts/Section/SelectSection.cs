@@ -20,9 +20,7 @@ public class SelectSection : MonoBehaviour {
     }
 
     private void OnMouseExit() {
-        if (!SectionManager.instance.onSection) {
-            TrocarCor(Color.clear);
-        }
+        TrocarCor(Color.clear);
     }
 
     private void OnMouseDown() {

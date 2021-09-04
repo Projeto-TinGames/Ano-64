@@ -533,6 +533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 184961666}
   darken: {fileID: 2083125382}
+  saveScene: {fileID: 610174682}
   titulo: {fileID: 1450480486}
 --- !u!1 &377210989
 GameObject:
@@ -1230,15 +1231,15 @@ PrefabInstance:
     - target: {fileID: 5022016158239289530, guid: 6ddb04cfee7e4484cb32dea5c120cdfd, type: 3}
       propertyPath: evento.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 610174682}
+      objectReference: {fileID: 370263281}
     - target: {fileID: 5022016158239289530, guid: 6ddb04cfee7e4484cb32dea5c120cdfd, type: 3}
       propertyPath: evento.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 2083125382}
+      objectReference: {fileID: 610174682}
     - target: {fileID: 5022016158239289530, guid: 6ddb04cfee7e4484cb32dea5c120cdfd, type: 3}
       propertyPath: evento.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 370263281}
+      objectReference: {fileID: 2083125382}
     - target: {fileID: 5022016158239289530, guid: 6ddb04cfee7e4484cb32dea5c120cdfd, type: 3}
       propertyPath: evento.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -1249,7 +1250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5022016158239289530, guid: 6ddb04cfee7e4484cb32dea5c120cdfd, type: 3}
       propertyPath: evento.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
+      value: SetSection
       objectReference: {fileID: 0}
     - target: {fileID: 5022016158239289530, guid: 6ddb04cfee7e4484cb32dea5c120cdfd, type: 3}
       propertyPath: evento.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -1257,11 +1258,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5022016158239289530, guid: 6ddb04cfee7e4484cb32dea5c120cdfd, type: 3}
       propertyPath: evento.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: SetSection
+      value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 5022016158239289530, guid: 6ddb04cfee7e4484cb32dea5c120cdfd, type: 3}
       propertyPath: evento.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: SectionManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5022016158239289530, guid: 6ddb04cfee7e4484cb32dea5c120cdfd, type: 3}
       propertyPath: evento.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -1269,7 +1270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5022016158239289530, guid: 6ddb04cfee7e4484cb32dea5c120cdfd, type: 3}
       propertyPath: evento.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: SectionManager, Assembly-CSharp
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5022016158239289530, guid: 6ddb04cfee7e4484cb32dea5c120cdfd, type: 3}
       propertyPath: evento.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument

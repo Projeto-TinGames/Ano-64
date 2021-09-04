@@ -1,8 +1,14 @@
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.InteropServices;
 
 public static class SaveSystem {
+
+    #if UNITY_WEBGL && !UNITY_EDITOR
+        [DllImport("__Internal")]
+        private static extern void SyncDB();
+    #endif
     
     public static void SavePlayer(int slot, Player player) {
         BinaryFormatter formatter = new BinaryFormatter();
@@ -13,6 +19,10 @@ public static class SaveSystem {
         formatter.Serialize(fileStream, data);
 
         fileStream.Close();
+
+        #if UNITY_WEBGL && !UNITY_EDITOR
+            SyncDB();
+        #endif
     }
 
     public static PlayerData LoadPlayer(int slot) {

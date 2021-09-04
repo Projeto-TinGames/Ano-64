@@ -12,7 +12,7 @@ public class SaveSlot : MonoBehaviour {
     public TextMeshProUGUI iconText;
     public Image icon;
 
-    private void Awake() {
+    private void OnEnable() {
         PlayerData data = SaveSystem.LoadPlayer(slotNumber);
 
         if (data != null) {
@@ -29,6 +29,7 @@ public class SaveSlot : MonoBehaviour {
 
     public void Save() {
         SaveSystem.SavePlayer(slotNumber, Player.instance);
+        SectionManager.instance.ToggleSave();
     } 
 
     public void Load() {
@@ -41,5 +42,6 @@ public class SaveSlot : MonoBehaviour {
             Player.instance.itemsFound = new List<string>(data.itemsFound);
             SceneController.instance.Load(data.page);
         }
+        SectionManager.instance.ToggleSave();
     }
 }

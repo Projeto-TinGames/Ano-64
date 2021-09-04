@@ -21,6 +21,12 @@ public class MainMenuManager : SectionManager {
         }
     }
 
+    public override void ToggleSave() {
+        onSection = !saveScene.activeSelf;
+        darken.SetActive(!saveScene.activeSelf);
+        saveScene.SetActive(!saveScene.activeSelf);
+    }
+
     public override void ImageSection(ImageObject imageObject) {
         throw new System.NotImplementedException();
     }

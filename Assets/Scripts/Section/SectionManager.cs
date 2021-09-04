@@ -10,6 +10,7 @@ public abstract class SectionManager : MonoBehaviour {
 
     public GameObject canvas;
     public GameObject darken;
+    public GameObject saveScene;
 
     public virtual void Awake() {
         instance = this;
@@ -36,6 +37,8 @@ public abstract class SectionManager : MonoBehaviour {
     public virtual void EnterSection(bool sectionBool, bool zoom, Transform transform) {
         SetSection(sectionBool);
     }
+
+    public abstract void ToggleSave();
 
     public abstract void ImageSection(ImageObject imageObject);
 
