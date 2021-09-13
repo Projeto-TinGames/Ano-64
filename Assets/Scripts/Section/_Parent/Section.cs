@@ -4,13 +4,15 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class SelectSection : MonoBehaviour {
-    public UnityEvent evento;
+public class Section : MonoBehaviour {
 
+    public SectionObject sectionObject;
+    private Item item;
     private List<SpriteRenderer> spritesSelecionados;
 
     private void Start() {
         spritesSelecionados = new List<SpriteRenderer>(GetComponentsInChildren<SpriteRenderer>());
+        item = GetComponent<Item>();
     }
 
     private void OnMouseOver() {
@@ -26,7 +28,11 @@ public class SelectSection : MonoBehaviour {
     private void OnMouseDown() {
         if (!SectionManager.instance.onSection) {
             TrocarCor(Color.clear);
-            evento.Invoke();
+
+            sectionObject.Execute(transform);
+            if (item != null) {
+                item.PickUp();
+            }
         }
     }
 

@@ -4,22 +4,27 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class ImageManager : MonoBehaviour {
-    public static ImageManager instance;
+public class ImageManager : SectionManager {
     public Image image;
     public TextMeshProUGUI descriptionBox;
     private List<TextMeshProUGUI> textButtons = new List<TextMeshProUGUI>();
 
-    private void Awake() {
-        if (instance == null) {
-            instance = this;
+    #region Singleton
+    public static ImageManager selfInstance;
+    public override void Awake() {
+        base.Awake();
+
+        if (selfInstance == null) {
+            selfInstance = this;
         }
         else {
             Destroy(gameObject);
         }
     }
+    #endregion
 
-    public void PresentImage(ImageObject imageObject) {
+    public override void ExecuteSection(SectionObject sectionObject) {
+        ImageObject imageObject = (ImageObject)sectionObject;
         image.sprite = imageObject.sprite;
         descriptionBox.text = imageObject.description;
 
