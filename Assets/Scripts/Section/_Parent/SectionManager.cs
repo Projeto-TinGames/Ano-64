@@ -7,24 +7,27 @@ public abstract class SectionManager : MonoBehaviour {
     public GameObject section;
 
     [System.NonSerialized]public bool onSection;
-    private int onSectionCounter;
+    private int cooldown;
 
     public virtual void Awake() {
         instance = this;
     }
 
     public virtual void FixedUpdate() {
-        if (onSectionCounter > 0) {
-            onSectionCounter--;
-            if (onSectionCounter <= 0) {
+        if (cooldown > 0) {
+            cooldown--;
+            if (cooldown <= 0) {
                 onSection = false;
             }
         }
     }
 
     public virtual void EnterSection(SectionObject sectionObject) {
-        section.SetActive(true);
-        onSection = true;
+        if (section != null) {
+            section.SetActive(true);
+            onSection = true;
+        }
+        
         instance = this;
         ExecuteSection(sectionObject);
     }
@@ -33,7 +36,7 @@ public abstract class SectionManager : MonoBehaviour {
         
     public virtual void ExitSection() {
         section.SetActive(false);
-        onSectionCounter = 5;
+        cooldown = 5;
     }
 
 }

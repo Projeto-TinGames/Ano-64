@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class TextManager : SectionManager {
+public class PenManager : SectionManager {
+    public static PenManager selfInstance;
     public TextMeshProUGUI textBox;
     public GameObject options;
     private List<TextMeshProUGUI> textButtons = new List<TextMeshProUGUI>();
-    public static TextManager selfInstance;
 
     public override void Awake() {
         base.Awake();
@@ -28,24 +28,13 @@ public class TextManager : SectionManager {
     }
 
     public override void ExecuteSection(SectionObject sectionObject) {
-        TextObject textObject = (TextObject) sectionObject;
 
-        textBox.text = textObject.text;
+        PenObject penObject = (PenObject)sectionObject;
 
-        for (int i = 0; i < textObject.options.Count; i++) {
-			textButtons[i].text = "\t" + textObject.options[i].text;
-        }
-    }
+        textBox.text = penObject.text;
 
-    public override void ExitSection() {
-        base.ExitSection();
-        CloseText();
-    }
-
-    public void CloseText() {
-        textBox.text = "";
-        for (int i = 0; i < textButtons.Count; i++) {
-			textButtons[i].text = "";
+        for (int i = 0; i < penObject.options[0].values.Length; i++) {
+			textButtons[i].text = "\t" + penObject.options[0].values[i];
         }
     }
 }
