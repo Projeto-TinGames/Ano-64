@@ -8,11 +8,16 @@ public class PenManager : SectionManager {
     public static PenManager selfInstance;
     public TextMeshProUGUI textBox;
     public GameObject options;
+    public GameObject close;
+    public GameObject conclusion;
+
+    private PenObject penObject;
 
     private List<TextMeshProUGUI> textButtons = new List<TextMeshProUGUI>();
-    private int currentIndex;
-    private Queue<Word> words = new Queue<Word>();
-    private int queueSize;
+    private int currentWordIndex;
+    private int currentTextIndex;
+
+    private string[] playerAnswers;
 
     public override void Awake() {
         base.Awake();
@@ -34,59 +39,98 @@ public class PenManager : SectionManager {
     }
 
     public override void ExecuteSection(SectionObject sectionObject) {
+        penObject = (PenObject)sectionObject;
 
-        PenObject penObject = (PenObject)sectionObject;
+        if (penObject.finalAnswer == null) {
+            playerAnswers = new string[penObject.answers.Length];
+            currentWordIndex = 0;
+            currentTextIndex = 0;
 
-        foreach (Word word in penObject.words) {
-            words.Enqueue(word);
+            textBox.text = penObject.text;
+            options.SetActive(true);
+            close.SetActive(true);
+            conclusion.SetActive(false);
+
+            ExecuteWord();
         }
 
-        textBox.text = penObject.text;
-        textBox.ForceMeshUpdate(true);
+        else {
+            PuzzleCorrect();
+        }
 
-        ExecuteNextWord();
     }
 
-    private void ExecuteNextWord() {
-        if (words.Count == 0) {
-			ExitSection();
-			return;
-		}
-		Word word = words.Dequeue();
+    public void ExecuteWord(int move = 0) {
+        textBox.ForceMeshUpdate(true);
+
+        currentWordIndex += move;
+
+        if (currentWordIndex >= penObject.words.Count || currentWordIndex < 0) {
+            currentWordIndex -= move;
+            return;
+        }
+
+		Word word = penObject.words[currentWordIndex];
         FocusWord(word);
     }
 
     private void FocusWord(Word word) {
-        //string markedWord = textBox.textInfo.wordInfo[word.textIndex].GetWord();
-        string markedWord = "<color=red>" + textBox.textInfo.wordInfo[word.textIndex].GetWord() + "</color>";
-        currentIndex = word.textIndex;
+        currentTextIndex = word.textIndex;
+        string text = "<color=red>" + textBox.textInfo.wordInfo[currentTextIndex].GetWord() + "</color>";
 
         for (int i = 0; i < word.possibleValues.Length; i++) {
 			textButtons[i].text = word.possibleValues[i];
         }
 
-        ChangeWord(markedWord);
-    }
-
-    public override void HandleChoice(string text) {
-        //ChangeWord(text);
-        ExecuteNextWord();
+        ChangeWord(text);
     }
 
     private void ChangeWord(string word) {
-        List<char> list = new List<char>(textBox.text.ToCharArray());
+        textBox.text = textBox.text.Replace("<color=red>","");
+        textBox.text = textBox.text.Replace("</color>","");
 
-        int wordStart = textBox.textInfo.wordInfo[currentIndex].firstCharacterIndex;
-        int wordEnd = textBox.textInfo.wordInfo[currentIndex].lastCharacterIndex + 1;
+        List<char> charList = new List<char>(textBox.text.ToCharArray());
 
-        list.RemoveRange(wordStart,wordEnd-wordStart);
-        Debug.Log(new string(list.ToArray()));
+        int wordStart = textBox.textInfo.wordInfo[currentTextIndex].firstCharacterIndex;
+        int wordEnd = textBox.textInfo.wordInfo[currentTextIndex].lastCharacterIndex + 1;
 
-        int i;
-        for (i = 0; i < word.Length; i++) {
-            list.Insert(wordStart + i, word[i]);
+        charList.RemoveRange(wordStart,wordEnd-wordStart);
+
+        for (int i = 0; i < word.Length; i++) {
+            charList.Insert(wordStart + i, word[i]);
         }
 
-        textBox.text = new string(list.ToArray());
+        textBox.text = new string(charList.ToArray());
+    }
+
+    public override void HandleChoice(string text) {
+        playerAnswers[currentWordIndex] = text;
+
+        if (currentWordIndex + 1 >= penObject.words.Count) {
+            text = "<color=red>" + text + "</color>";
+        }
+        ChangeWord(text);
+
+        for (int i = 0; i < playerAnswers.Length; i++) {
+            if (playerAnswers[i] != penObject.answers[i]) {
+                ExecuteWord(1);
+                return;
+            }
+        }
+        
+        PuzzleCorrect();
+    }
+
+    private void PuzzleCorrect() {
+        textBox.text = textBox.text.Replace("<color=red>","");
+        textBox.text = textBox.text.Replace("</color>","");
+        textBox.text = "<color=green>" + textBox.text + "</color>";
+
+        penObject.finalAnswer = textBox.text;
+
+        textBox.ForceMeshUpdate(true);
+        conclusion.SetActive(true);
+        close.SetActive(false);
+        options.SetActive(false);
     }
 }

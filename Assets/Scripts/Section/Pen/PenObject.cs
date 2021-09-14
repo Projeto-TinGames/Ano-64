@@ -12,6 +12,8 @@ public class Word {
 public class PenObject : SectionObject {
     [TextArea(3,10)]public string text;
     public List<Word> words = new List<Word>();
+    public string[] answers;
+    [System.NonSerialized]public string finalAnswer;
     
     public override void Execute(Transform transform = null) {
         PenManager.selfInstance.EnterSection(this);
