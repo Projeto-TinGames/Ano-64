@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Options {
-    public string[] values = new string[9];
+public class Word {
+    public int textIndex;
+    public string[] possibleValues = new string[9];
 }
 
 [CreateAssetMenu(menuName = "Section/PenObject")]
 public class PenObject : SectionObject {
-    public string text;
-    public List<Options> options = new List<Options>();
+    [TextArea(3,10)]public string text;
+    public List<Word> words = new List<Word>();
     
     public override void Execute(Transform transform = null) {
         PenManager.selfInstance.EnterSection(this);

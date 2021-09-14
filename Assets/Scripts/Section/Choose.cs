@@ -4,12 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class TextChoose : MonoBehaviour {
+public class Choose : MonoBehaviour {
     private string text;
 
-    public void Choose() {
+    public void ChooseOption() {
         text = GetComponentInChildren<TextMeshProUGUI>().text.Replace("\t","");
-        SectionManager.instance.ExitSection();
-        Debug.Log(text);
+        SectionManager.instance.HandleChoice(text);
     }
 }

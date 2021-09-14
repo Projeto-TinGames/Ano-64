@@ -33,6 +33,8 @@ public abstract class SectionManager : MonoBehaviour {
     }
     
     public abstract void ExecuteSection(SectionObject sectionObject);
+
+    public virtual void HandleChoice(string text){}
         
     public virtual void ExitSection() {
         section.SetActive(false);

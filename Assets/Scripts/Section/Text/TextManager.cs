@@ -37,6 +37,11 @@ public class TextManager : SectionManager {
         }
     }
 
+    public override void HandleChoice(string text) {
+        Debug.Log(text);
+        ExitSection();
+    }
+
     public override void ExitSection() {
         base.ExitSection();
         CloseText();
