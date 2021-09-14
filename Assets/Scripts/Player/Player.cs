@@ -10,6 +10,7 @@ public class Player : MonoBehaviour {
     public int difficulty;
     public int page;
     public List<string> itemsFound = new List<string>();
+    public List<PenSolved> penSolved = new List<PenSolved>();
 
     private void Awake() {
         if (instance == null) {
@@ -28,6 +29,10 @@ public class Player : MonoBehaviour {
 
     public bool FindItem(string key) {
         return itemsFound.Contains(key);
+    }
+
+    public void SolvePuzzle(PenSolved puzzle) {
+        penSolved.Add(puzzle);
     }
 
 }

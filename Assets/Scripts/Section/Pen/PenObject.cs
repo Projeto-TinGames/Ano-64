@@ -13,9 +13,21 @@ public class PenObject : SectionObject {
     [TextArea(3,10)]public string text;
     public List<Word> words = new List<Word>();
     public string[] answers;
-    [System.NonSerialized]public string finalAnswer;
     
     public override void Execute(Transform transform = null) {
-        PenManager.selfInstance.EnterSection(this);
+        if (Player.instance.FindItem("Pen")) {
+            PenManager.selfInstance.EnterSection(this);
+        }
+    }
+}
+
+[System.Serializable]
+public class PenSolved {
+    public string key;
+    public string answer;
+
+    public PenSolved(string key, string answer) {
+        this.key = key;
+        this.answer = answer;
     }
 }

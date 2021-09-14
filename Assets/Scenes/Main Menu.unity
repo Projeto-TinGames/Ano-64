@@ -610,7 +610,10 @@ MonoBehaviour:
   timestamp: 
   difficulty: 0
   page: 0
-  itemsFound: []
+  itemsFound:
+  - Magnifier
+  - Pen
+  penSolved: []
 --- !u!1 &370263279
 GameObject:
   m_ObjectHideFlags: 0

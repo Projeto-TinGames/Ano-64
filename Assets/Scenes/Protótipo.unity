@@ -1200,6 +1200,14 @@ PrefabInstance:
       propertyPath: m_AnchorMin.y
       value: 0.6666666
       objectReference: {fileID: 0}
+    - target: {fileID: 416799690120319033, guid: 88cd3e51626c848448d7990ba743d204, type: 3}
+      propertyPath: itemsFound.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 416799690120319033, guid: 88cd3e51626c848448d7990ba743d204, type: 3}
+      propertyPath: itemsFound.Array.data[1]
+      value: Pen
+      objectReference: {fileID: 0}
     - target: {fileID: 416799690173588584, guid: 88cd3e51626c848448d7990ba743d204, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

@@ -40,6 +40,7 @@ public class SaveSlot : MonoBehaviour {
             Player.instance.difficulty = data.difficulty;
             Player.instance.page = data.page;
             Player.instance.itemsFound = new List<string>(data.itemsFound);
+            Player.instance.penSolved = new List<PenSolved>(data.penSolved);
             SceneController.instance.Load(data.page);
         }
         SectionManager.instance.ExitSection();

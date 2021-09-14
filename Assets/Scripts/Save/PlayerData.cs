@@ -10,6 +10,7 @@ public class PlayerData {
     public int difficulty;
     public int page;
     public string[] itemsFound;
+    public PenSolved[] penSolved;
 
     public PlayerData(Player player) {
         chapter = player.chapter;
@@ -17,6 +18,7 @@ public class PlayerData {
         difficulty = player.difficulty;
         page = player.page;
         itemsFound = player.itemsFound.ToArray();
+        penSolved = player.penSolved.ToArray();
     }
 
 }

@@ -41,23 +41,23 @@ public class PenManager : SectionManager {
     public override void ExecuteSection(SectionObject sectionObject) {
         penObject = (PenObject)sectionObject;
 
-        if (penObject.finalAnswer == null) {
-            playerAnswers = new string[penObject.answers.Length];
-            currentWordIndex = 0;
-            currentTextIndex = 0;
-
-            textBox.text = penObject.text;
-            options.SetActive(true);
-            close.SetActive(true);
-            conclusion.SetActive(false);
-
-            ExecuteWord();
+        foreach (PenSolved penSolved in Player.instance.penSolved) {
+            if (penSolved.key == penObject.name) {
+                ShowConclusion(penSolved.answer);
+                return;
+            }
         }
 
-        else {
-            PuzzleCorrect();
-        }
+        playerAnswers = new string[penObject.answers.Length];
+        currentWordIndex = 0;
+        currentTextIndex = 0;
 
+        textBox.text = penObject.text;
+        options.SetActive(true);
+        close.SetActive(true);
+        conclusion.SetActive(false);
+
+        ExecuteWord();
     }
 
     public void ExecuteWord(int move = 0) {
@@ -122,11 +122,18 @@ public class PenManager : SectionManager {
     }
 
     private void PuzzleCorrect() {
-        textBox.text = textBox.text.Replace("<color=red>","");
-        textBox.text = textBox.text.Replace("</color>","");
-        textBox.text = "<color=green>" + textBox.text + "</color>";
+        string answer = textBox.text.Replace("<color=red>","");
+        answer = answer.Replace("</color>","");
+        answer = "<color=green>" + answer + "</color>";
 
-        penObject.finalAnswer = textBox.text;
+        PenSolved penSolved = new PenSolved(penObject.name,answer);
+        Player.instance.SolvePuzzle(penSolved);
+
+        ShowConclusion(answer);
+    }
+
+    private void ShowConclusion(string answer) {
+        textBox.text = answer;
 
         textBox.ForceMeshUpdate(true);
         conclusion.SetActive(true);
