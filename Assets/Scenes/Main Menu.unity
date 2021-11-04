@@ -613,6 +613,7 @@ MonoBehaviour:
   itemsFound:
   - Magnifier
   - Pen
+  - DarkLight
   penSolved: []
 --- !u!1 &370263279
 GameObject:

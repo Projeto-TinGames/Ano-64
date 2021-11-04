@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7be118f480344b64c9660d5ec0e5d3c1, type: 3}
+  m_Name: 05-16
+  m_EditorClassIdentifier: 
+  text: "<b>16 de maio de 1964</b>\r\n\r\nHoje recebi uma carta, colocaram na caixa
+    de correspond\xEAncia. Uma forte chuva caiu e a algumas letras da carta ficaram
+    manchadas. A carta estava escrita com caneta azul e mensagem dizia o seguinte.
+    \r\n\r\n<color=blue>Tive de u ir, por sorte Baleia estava atento. Eu e ele zarpamos
+    em seu c r nho velho. N\xE3o posso d er onde estou por hora, mas espero que alguma
+    hora voc\xEA saiba. Estou  gu o, por ra...\r</color>\n\r\nAssinado, Tavo.\r\n\r\nTavo\u2026
+    s\xF3 podia ser Lu\xEDs, eu o chamava assim, na verdade todos chamavam. Ent\xE3o
+    ele estava bem, mas a carta n\xE3o tinha endere\xE7o nem nada. \r"
+  options: []

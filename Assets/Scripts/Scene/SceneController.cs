@@ -19,6 +19,14 @@ public class SceneController : MonoBehaviour {
         }
     }
 
+    public void NextScene() {
+        Load(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void PreviousScene() {
+        Load(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
     public void Load(int scene) {
         Player.instance.page = scene;
         StartCoroutine(LoadLevel(scene));

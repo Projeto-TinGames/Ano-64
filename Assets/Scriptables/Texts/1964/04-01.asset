@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7be118f480344b64c9660d5ec0e5d3c1, type: 3}
+  m_Name: 04-01
+  m_EditorClassIdentifier: 
+  text: "<b>1 de abril de 1964.</b>\r\n\r\nNa noite do dia 1 de abril, acompanhando
+    a tomada do poder pelos militares, o telefone de casa tocou e minha m\xE3e pediu
+    para eu atender. Era uma voz feminina, com uma respira\xE7\xE3o forte, parecia
+    sem f\xF4lego. Era uma conhecida minha e de Lu\xEDs, membra da UNE, chamada Cristina.
+    Ela disse que os militares haviam posto fogo na sede da UNE, na Praia do Flamengo
+    132. Tudo come\xE7ou com uma rajada de tiros de metralhadora, depois invadiram
+    o pr\xE9dio e depredaram tudo, colocando fogo logo em seguida. Luis havia entrado
+    em um carro em disparada e sumido dali, pela porta dos fundos.\r"
+  options: []

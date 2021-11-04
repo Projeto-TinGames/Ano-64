@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7be118f480344b64c9660d5ec0e5d3c1, type: 3}
+  m_Name: 03-25
+  m_EditorClassIdentifier: 
+  text: "<b>25 de mar\xE7o de 1964.\r</b>\n\r\nHoje inicio meu di\xE1rio, embora
+    n\xE3o saiba bem porqu\xEA. Talvez pelo fato de toda essa sensa\xE7\xE3o ruim
+    que estou sentindo...\r\nMe chamo Pablo Monteiro, tenho 22 anos, sou estudante
+    de jornalismo e vivo no Rio de Janeiro. Ultimamente tenho estado com uma sensa\xE7\xE3o
+    ruim, de que algo vai acontecer. Hoje na faculdade havia um certo burburinho
+    nos corredores e nas bancas de jornais, as manchetes falavam de certa press\xE3o
+    em cima do presidente Jo\xE3o Goulart. Resolvi que deveria ligar para meu melhor
+    amigo Luis Ot\xE1vio, estudante de fotografia e importante membro da Uni\xE3o
+    Nacional dos Estudantes. Ele tamb\xE9m estava se sentindo mal e disse que provavelmente
+    n\xE3o conseguiria dormir.\r"
+  options: []

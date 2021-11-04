@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7be118f480344b64c9660d5ec0e5d3c1, type: 3}
+  m_Name: 05-04 (part 1)
+  m_EditorClassIdentifier: 
+  text: "<b>3:40 da manh\xE3 de 4 de maio de 1964.</b>\r\n\r\nFiquei um tempo sem
+    escrever, tentando entender tudo o que estava acontecendo. O Marechal Castelo
+    Branco tomou o poder e agora \xE9 nosso \u201Cpresidente\u201D. Ler o jornal
+    me d\xE1 certo nojo pois eles est\xE3o compactuando com tudo isso. H\xE1 um certo
+    apoio observado nessas p\xE1ginas de jornal.\r"
+  options: []

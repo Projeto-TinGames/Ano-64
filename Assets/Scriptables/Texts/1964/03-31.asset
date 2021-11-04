@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7be118f480344b64c9660d5ec0e5d3c1, type: 3}
+  m_Name: 03-31
+  m_EditorClassIdentifier: 
+  text: "<b>31 de mar\xE7o de 1964\r</b>\n\r\nHoje o pior aconteceu: os militares
+    tomaram o poder. Na rua se observava a correria. Vi tanques de guerra passando,
+    enquanto observava tudo da minha janela. Acompanhei as not\xEDcias pelo r\xE1dio
+    que t\xEDnhamos em casa. O pessoal da UNE ser\xE1 um alvo provavelmente, pois
+    eles sempre foram engajados pelas causas do povo. Por algum motivo, nunca me
+    envolvi com eles, mas apoiava muito meu amigo Luis. Hoje eu o liguei e a \xFAnica
+    coisa que pude dizer foi: tome cuidado. \r"
+  options: []
