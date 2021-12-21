@@ -49,4 +49,5 @@ public class ClickManager : MonoBehaviour {
     public bool IsTargeting(GameObject obj) {
         return obj == targetObject;
     }
+
 }

@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class BackButton : MonoBehaviour {
     public void Back() {
-        ApproachManager.selfInstance.ReturnCamera();
+        ApproachManager.instance.ReturnCamera();
     }
 }

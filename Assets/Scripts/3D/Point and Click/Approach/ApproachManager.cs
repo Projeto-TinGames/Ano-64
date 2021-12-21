@@ -3,35 +3,47 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ApproachManager : ClickManager {
-    public static ApproachManager selfInstance;
+public class ApproachManager : MonoBehaviour {
+    public static ApproachManager instance;
 
-    [SerializeField]private Camera objCamera;
-    [SerializeField]private GameObject backButton;
+    public Camera m_camera;
+    public GameObject backButton;
+    private Approachable approachedObject;
     private Vector3 resetCamera;
 
-    public override void Awake() {
-        base.Awake();
-        if (selfInstance == null) {
-            selfInstance = this;
+    public void Awake() {
+        if (instance == null) {
+            instance = this;
         }
         else {
             Destroy(gameObject);
         }
-        resetCamera = new Vector3(objCamera.transform.position.x,objCamera.transform.position.y,objCamera.transform.position.z);
-        Debug.Log(resetCamera);
+        resetCamera = new Vector3(m_camera.transform.position.x,m_camera.transform.position.y,m_camera.transform.position.z);
     }
 
-    public void ApproachCamera(GameObject obj) {
+    public void ApproachCamera(Approachable approachable) {
         backButton.SetActive(true);
-        Vector3 targetPosition = obj.transform.position;
-        objCamera.transform.position = new Vector3(targetPosition.x, targetPosition.y + 1f, targetPosition.z - 5f);
+        approachedObject = approachable;
+
+        foreach (GameObject childObject in approachedObject.childrenObjects) {
+            childObject.SetActive(true);
+            childObject.transform.parent = null;
+        }
+
+        Vector3 targetPosition = approachable.transform.position;
+        m_camera.transform.position = new Vector3(targetPosition.x, targetPosition.y + 1f, targetPosition.z - 5f);
     }
 
     public void ReturnCamera() {
-        backButton.SetActive(false);
-        Debug.Log(resetCamera);
-        objCamera.transform.position = resetCamera;
-    }
+        approachedObject.gameObject.SetActive(true);
 
+        foreach (GameObject childObject in approachedObject.childrenObjects) {
+            childObject.SetActive(false);
+            childObject.transform.parent = approachedObject.gameObject.transform;
+        }
+
+
+        backButton.SetActive(false);
+        m_camera.transform.position = resetCamera;
+    }
 }

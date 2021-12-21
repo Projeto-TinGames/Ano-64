@@ -7,14 +7,12 @@ public class Clickable : MonoBehaviour {
     private Outline outline;
     private bool targeted;
 
-    [SerializeField]private ClickableObject clickableObject;
-
     private void Awake() {
         outline = gameObject.AddComponent<Outline>();
         gameObject.tag = "Clickable";
     }
 
-    private void Start() {
+    public virtual void Start() {
         outline.enabled = false;
         outline.OutlineColor = Color.red;
         outline.OutlineWidth = 10f;
@@ -30,9 +28,9 @@ public class Clickable : MonoBehaviour {
         }
     }
 
-    private void Click() {
+    public virtual void Click() {
         if (targeted) {
-            clickableObject.Execute(gameObject);
+            Target(false);
         }
     }
     

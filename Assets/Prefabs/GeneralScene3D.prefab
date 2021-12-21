@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8e9c64a712b09b4bb83fe5220fb1aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objCamera: {fileID: 7449300150029418966}
+  m_camera: {fileID: 7449300150029418966}
   backButton: {fileID: 7449300150449994004}
 --- !u!1 &7449300149401013065
 GameObject:
