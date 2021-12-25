@@ -5,16 +5,23 @@ using UnityEngine;
 public class Clickable : MonoBehaviour {
 
     private Outline outline;
-    private bool targeted;
-
-    [SerializeField]private ClickableObject clickableObject;
+    [System.NonSerialized]public bool targetable = true;
+    [System.NonSerialized]public bool targeted;
 
     private void Awake() {
         outline = gameObject.AddComponent<Outline>();
         gameObject.tag = "Clickable";
+
+        BoxCollider collider = gameObject.AddComponent<BoxCollider>();
+        collider.isTrigger = true;
+
+        Rigidbody rigidBody = gameObject.AddComponent<Rigidbody>();
+
+        rigidBody.useGravity = false;
+        rigidBody.isKinematic = true;
     }
 
-    private void Start() {
+    public virtual void Start() {
         outline.enabled = false;
         outline.OutlineColor = Color.red;
         outline.OutlineWidth = 10f;
@@ -25,21 +32,17 @@ public class Clickable : MonoBehaviour {
     }
 
     private void MouseEnter() {
-        if (ClickManager.instance.IsTargeting(this.gameObject)) {
+        if (ClickManager.instance.IsTargeting(this.gameObject) && targetable) {
             Target(true);
         }
     }
 
-    private void Click() {
-        if (targeted) {
-            clickableObject.Execute(gameObject);
-        }
+    public virtual void Click() {
+        Target(false);
     }
     
     private void MouseExit() {
-        if (targeted) {
-            Target(false);
-        }
+        Target(false);
     }
 
     private void Target(bool target) {

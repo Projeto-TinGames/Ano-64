@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 0
     path: "Assets/Scenes/Prot\xF3tipo.unity"
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/1964/03-25 - 04-01.unity
     guid: 7328fcbdb5039d94d9004888c98af593
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/1964/05-04 - 05-16.unity
     guid: b632e78fb94e83b48a1fc2e5988962b3
   - enabled: 1

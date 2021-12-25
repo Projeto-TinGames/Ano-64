@@ -32,7 +32,9 @@ public abstract class SectionManager : MonoBehaviour {
         ExecuteSection(sectionObject);
     }
     
-    public abstract void ExecuteSection(SectionObject sectionObject);
+    public virtual void ExecuteSection(SectionObject sectionObject) {
+
+    }
 
     public virtual void HandleChoice(string text){}
         
