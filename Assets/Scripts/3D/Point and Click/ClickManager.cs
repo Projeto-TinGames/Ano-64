@@ -10,6 +10,7 @@ public class ClickManager : MonoBehaviour {
     [System.NonSerialized]public UnityEvent mouseEnter;
     [System.NonSerialized]public UnityEvent click;
     [System.NonSerialized]public UnityEvent mouseExit;
+    [System.NonSerialized]public bool dragging;
 
     public virtual void Awake() {
         if (instance == null) {
@@ -36,8 +37,13 @@ public class ClickManager : MonoBehaviour {
                 targetObject = hit.transform.gameObject;
                 mouseEnter.Invoke();
             }
-            if (Input.GetMouseButton(0)) {
+            if (Input.GetMouseButtonDown(0)) {
+                targetObject = null;
                 click.Invoke();
+            }
+            if (targetObject != hit.transform.gameObject && !dragging) {
+                targetObject = null;
+                mouseExit.Invoke();
             }
         }
         else {

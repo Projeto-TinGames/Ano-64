@@ -5,11 +5,20 @@ using UnityEngine;
 public class Clickable : MonoBehaviour {
 
     private Outline outline;
-    private bool targeted;
+    [System.NonSerialized]public bool targetable = true;
+    [System.NonSerialized]public bool targeted;
 
     private void Awake() {
         outline = gameObject.AddComponent<Outline>();
         gameObject.tag = "Clickable";
+
+        BoxCollider collider = gameObject.AddComponent<BoxCollider>();
+        collider.isTrigger = true;
+
+        Rigidbody rigidBody = gameObject.AddComponent<Rigidbody>();
+
+        rigidBody.useGravity = false;
+        rigidBody.isKinematic = true;
     }
 
     public virtual void Start() {
@@ -23,21 +32,17 @@ public class Clickable : MonoBehaviour {
     }
 
     private void MouseEnter() {
-        if (ClickManager.instance.IsTargeting(this.gameObject)) {
+        if (ClickManager.instance.IsTargeting(this.gameObject) && targetable) {
             Target(true);
         }
     }
 
     public virtual void Click() {
-        if (targeted) {
-            Target(false);
-        }
+        Target(false);
     }
     
     private void MouseExit() {
-        if (targeted) {
-            Target(false);
-        }
+        Target(false);
     }
 
     private void Target(bool target) {
